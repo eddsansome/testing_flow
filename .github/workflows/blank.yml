@@ -25,8 +25,9 @@ jobs:
 
       - name: Run a multi-line script
         env:
-          JSON: '{"json":"thing"}'
+          JSON: '{"key":"world"}'
         run: |
-          goodbye=${{fromJSON(env.JSON)}}
+          goodbye=${{fromJSON(env.JSON).key}}
+          echo hello, $goodbye
           echo Add other actions to build,
           echo test, and deploy your project.
